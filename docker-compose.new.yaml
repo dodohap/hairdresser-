@@ -1,0 +1,35 @@
+version: '3.1'
+
+services:
+  user-service:
+    build: ./user
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./user:/usr/src/app
+      - /usr/src/app/node_modules
+    command: npm run dev
+    environment:
+      - REDIS_URL=redis://redis:6379
+      - DATABASE_URL="postgresql://postgres:postgres@postgres:5432/postgres?schema=public"
+
+  services-service:
+    build: ./control-services
+    ports:
+      - "3001:3001"
+    volumes:
+      - ./control-services:/usr/src/app
+      - /usr/src/app/node_modules
+    command: npm run dev
+    environment:
+      - REDIS_URL=redis://redis:6379
+      - DATABASE_URL="postgresql://postgres:postgres@postgres:5432/postgres?schema=public"
+
+  frontend:
+    build: ./client
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./client:/usr/src/app
+      - /usr/src/app/node_modules
+    command: npm run dev

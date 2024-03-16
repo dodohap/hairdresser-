@@ -1,0 +1,14 @@
+.footer {
+  background-color: #292929; /* Dopasowanie koloru do ciemnej kolorystyki strony */
+  color: #ccc;
+  text-align: center;
+  padding: 20px 10px;
+  width: 100%;
+  position: relative;
+  bottom: 0;
+  left: 0;
+}
+
+.footer-content p {
+  margin: 5px 0;
+}

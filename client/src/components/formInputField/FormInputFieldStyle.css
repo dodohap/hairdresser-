@@ -1,0 +1,83 @@
+.title {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  color: black;
+  text-align: center;
+}
+
+.input-icon-container {
+  position: relative;
+}
+
+.input-icon {
+  position: absolute;
+  color: gray;
+  top: 24px;
+  left: 8px;
+  pointer-events: none;
+}
+
+.input-style {
+  width: 100%;
+  padding: 8px 5px;
+  padding-left: 26px;
+  margin: 12px 0;
+  box-sizing: border-box;
+  border: 1px solid #555;
+  background-color: #ffffff;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  color: black;
+}
+
+input:disabled,
+input[disabled] {
+  background-color: #e9ecef;
+  color: #6c757d;
+  border: 1px solid #555;
+  cursor: not-allowed;
+}
+
+.form-error {
+  color: #ff5555;
+  font-size: 14px;
+  margin-top: -10px;
+  margin-bottom: -10px;
+}
+
+.button-form {
+  background-color: #fff;
+  color: black;
+  padding: 5px 10px;
+  border: 1px solid black;
+  cursor: pointer;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  text-align: center;
+  display: block;
+  width: 100%;
+  margin: 8px 0;
+}
+
+.forgot-password-button {
+  background-color: transparent;
+  color: #000000; /* Lighter blue for links */
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  text-align: center;
+  display: block;
+  width: 100%;
+  margin: 8px 0;
+  text-decoration: underline;
+}
+
+.forgot-password-button:hover,
+.button-form:hover {
+  transition: background-color 0.3s ease-in-out;
+  background-color: #000000;
+  color: white;
+}

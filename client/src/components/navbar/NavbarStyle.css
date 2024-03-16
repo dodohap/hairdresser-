@@ -1,0 +1,85 @@
+.navbar {
+  background-color: black;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  align-items: center;
+  flex-wrap: wrap; /* Zapewnia, że elementy mogą przechodzić do nowej linii */
+}
+
+.logo a,
+.nav-links li a,
+.appointment-button a {
+  text-decoration: none;
+  color: #bbb;
+  transition: color 0.3s ease;
+}
+
+.logo a {
+  font-size: 24px;
+  color: #fff;
+  font-weight: 700;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links button {
+  color: white;
+  cursor: pointer;
+}
+
+.appointment-button a {
+  background-color: #008cba;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 4px;
+  margin-top: 10px; /* Dodatkowy margines, jeśli potrzebujesz więcej przestrzeni */
+}
+
+.appointment-button a:hover {
+  background-color: #007ba7;
+}
+
+.account-dropdown {
+  position: relative; /* Add this line */
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  width: 120px;
+  top: 80%; /* This makes it start right at the bottom of the parent item */
+  left: -20%; /* Align it to the left of the parent item */
+  background-color: #333;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  padding: 8px;
+  z-index: 1;
+}
+
+.account-dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu a {
+  color: #fff;
+  padding: 10px;
+  text-decoration: none;
+  display: block;
+}
+
+.appointment-button a {
+  display: inline-block; /* Aby przycisk był w linii z linkami */
+  margin-bottom: 12px;
+  margin-left: 20px; /* Odstęp od ostatniego linku */
+}
+
+.nav-links li,
+.appointment-button {
+  display: flex;
+  align-items: center;
+}

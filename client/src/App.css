@@ -1,0 +1,26 @@
+body {
+  background-color: #fff;
+  color: #fff;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+}
+
+.site-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ustawienie minimalnej wysokości na 100% widocznej części strony */
+}
+
+.footer {
+  background-color: #292929;
+  color: #ccc;
+  text-align: center;
+  padding: 20px 10px;
+  width: 100%;
+}

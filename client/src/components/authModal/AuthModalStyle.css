@@ -1,0 +1,75 @@
+.modal {
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 40px;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15px auto; /* Centering margin for smaller content */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 500px;
+  max-height: 80vh; /* Sets maximum height */
+  overflow-y: auto; /* Allows internal scrolling */
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.tabs {
+  display: flex;
+  margin-bottom: 40px;
+}
+
+.tab {
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 10px;
+  margin-right: 5px;
+  font-weight: bold;
+  color: gray;
+}
+
+.tab.active {
+  color: black;
+  border-bottom: 2px solid black;
+}
+
+.forgot-password {
+  text-align: left;
+  color: black;
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.buttons {
+  margin-top: 40px;
+}

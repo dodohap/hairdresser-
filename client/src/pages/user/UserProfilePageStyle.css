@@ -1,0 +1,54 @@
+.user-profile-container {
+  width: 100vw; /* Full viewport width */
+  height: 80vh; /* Full viewport height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
+  box-sizing: border-box; /* Include padding in the element's total width and height */
+  background-color: #f9f9f9;
+}
+
+.user-profile-title {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px; /* Adjust as needed */
+}
+
+.user-profile-info {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Adjust the sections to be more in line with a full-page layout */
+.user-profile-section {
+  width: 80%; /* Adjust based on preference */
+  max-width: 600px; /* Keep a maximum width */
+  margin-bottom: 20px;
+  text-align: center; /* Center the text for a balanced look */
+}
+
+.user-profile-button {
+  background-color: #0056b3;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  display: block;
+  width: 50%; /* Adjust the button width as per design requirements */
+  max-width: 300px; /* Maximum width for the button */
+  margin: 20px auto; /* Center the button horizontally */
+  transition: background-color 0.3s ease;
+}
+
+.user-profile-button:hover {
+  background-color: #004494;
+}

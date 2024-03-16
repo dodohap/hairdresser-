@@ -1,0 +1,51 @@
+version: '3.1'
+
+services:
+  redis:
+    image: "redis:latest"
+    ports:
+      - "6379:6379"
+
+  postgres:
+    image: postgres:11
+    container_name: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+  backend:
+    build: ./user-service
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./user-service:/usr/src/app
+      - /usr/src/app/node_modules
+    command: npm run dev
+    environment:
+      - REDIS_URL=redis://redis:6379
+      - DATABASE_URL="postgresql://postgres:postgres@postgres:5432/postgres?schema=public"
+    links:
+      - postgres
+      - redis
+    depends_on:
+      - postgres
+      - redis
+
+  frontend:
+    build: ./client
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./client:/usr/src/app
+      - /usr/src/app/node_modules
+    command: npm run dev
+
+volumes:
+  postgres-data:
+  

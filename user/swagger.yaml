@@ -1,0 +1,222 @@
+swagger: "2.0"
+info:
+  version: 1.0.0
+  title: User Authentication and Account Management API
+  description: API for user authentication and account management including
+    registration, login, logout, account activation, user data changes, and
+    password reset.
+basePath: /api
+schemes:
+  - http
+paths:
+  /register:
+    post:
+      summary: Register a new user
+      description: Creates a new user with the provided details.
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: user
+          description: New user object
+          required: true
+          schema:
+            $ref: "#/definitions/NewUser"
+      responses:
+        "201":
+          description: User registered successfully
+          schema:
+            $ref: "#/definitions/User"
+        "400":
+          description: Invalid input data
+  /login:
+    post:
+      summary: Log in a user
+      description: Logs in a user with email and password.
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: loginDetails
+          description: User login details
+          required: true
+          schema:
+            $ref: "#/definitions/LoginDetails"
+      responses:
+        "200":
+          description: Login successful
+          schema:
+            $ref: "#/definitions/User"
+        "401":
+          description: Invalid credentials or account not activated
+  /logout:
+    post:
+      summary: Log out a user
+      description: Logs out a user based on the provided user ID.
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: userId
+          description: ID of the user to log out
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Logout successful
+  /activate-account:
+    get:
+      summary: Activate a user account via a link
+      description: Activates a user account using a unique link sent via email.
+      parameters:
+        - in: query
+          name: userId
+          required: true
+          type: string
+        - in: query
+          name: key
+          required: true
+          type: string
+      responses:
+        "200":
+          description: Account activated successfully
+        "400":
+          description: Invalid or expired activation link
+  /change-user-data:
+    put:
+      summary: Change user data
+      description: Changes the data of a user, including password.
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: userDataChange
+          description: User data change request
+          required: true
+          schema:
+            $ref: "#/definitions/UserUpdateData"
+      responses:
+        "200":
+          description: User data changed successfully
+        "400":
+          description: Invalid input data or password mismatch
+  /generate-reset-password-link:
+    post:
+      summary: Generate password reset link
+      description: Generates a password reset link and sends it to the user's email.
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: email
+          description: Email address of the user
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Password reset link generated successfully
+        "404":
+          description: User not found
+  /reset-password:
+    post:
+      summary: Reset password via a link
+      description: Resets a user's password using a unique link sent via email.
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: passwordReset
+          description: Password reset request
+          required: true
+          schema:
+            $ref: "#/definitions/PasswordResetRequest"
+      responses:
+        "200":
+          description: Password reset successfully
+        "400":
+          description: Invalid or expired reset link
+definitions:
+  NewUser:
+    type: object
+    required:
+      - firstName
+      - lastName
+      - email
+      - phoneNumber
+      - password
+    properties:
+      firstName:
+        type: string
+      lastName:
+        type: string
+      email:
+        type: string
+      phoneNumber:
+        type: string
+      password:
+        type: string
+  User:
+    type: object
+    properties:
+      id:
+        type: string
+      firstName:
+        type: string
+      lastName:
+        type: string
+      email:
+        type: string
+      phoneNumber:
+        type: string
+      isAccountActive:
+        type: boolean
+  LoginDetails:
+    type: object
+    required:
+      - email
+      - password
+    properties:
+      email:
+        type: string
+      password:
+        type: string
+  UserUpdateData:
+    type: object
+    properties:
+      email:
+        type: string
+      firstName:
+        type: string
+      lastName:
+        type: string
+      phoneNumber:
+        type: string
+      password:
+        type: string
+  PasswordResetRequest:
+    type: object
+    required:
+      - userId
+      - key
+      - newPassword
+    properties:
+      userId:
+        type: string
+      key:
+        type: string
+      newPassword:
+        type: string

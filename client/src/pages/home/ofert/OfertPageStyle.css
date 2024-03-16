@@ -1,0 +1,50 @@
+.oferta-container {
+  color: #fff;
+  background-color: #333;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+  max-width: 800px;
+  margin: 40px auto;
+  background-image: linear-gradient(
+    to right,
+    #292929,
+    #3a3a3a
+  ); /* Gradientowe tło */
+}
+
+.services-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  color: #fff; /* lub inny kolor tekstu */
+}
+
+.services-table th,
+.services-table td {
+  text-align: left;
+  padding: 8px;
+}
+
+.vertical-line {
+  border-left: 2px solid #ccc; /* Kolor kreski */
+  height: 20px; /* Wysokość kreski */
+  float: left; /* Wyrównanie kreski do lewej strony komórki */
+  margin-right: 10px; /* Odstęp tekstu od kreski */
+}
+
+/* Dodatkowe style dla nagłówka i wierszy dla lepszej czytelności */
+.services-table th {
+  background-color: #444; /* Ciemniejsze tło nagłówka */
+}
+
+.services-table tr:nth-child(odd) {
+  background-color: #333; /* Lekkie przyciemnienie dla naprzemiennych wierszy */
+}
+
+.advice-section {
+  text-align: center;
+  margin-top: 30px;
+  font-style: italic;
+  color: #ddd; /* Nieco jaśniejszy tekst dla wyróżnienia */
+}

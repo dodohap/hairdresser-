@@ -1,0 +1,10 @@
+{
+  "errors": {
+    "ServerError": "Wystąpił błąd serwera, spróbuj ponownie później.",
+    "AccountNotActivatedError": "Konto nie zostało aktywowane.",
+    "InvalidCredentialsError": "Nieprawidłowe dane logowania.",
+    "UserDoesNotExistError": "Użytkownik nie istnieje.",
+    "UserAlreadyExistsError": "Użytkownik już istnieje.",
+    "InvalidSessionError": "Sesja jest nieprawidłowa."
+  }
+}
